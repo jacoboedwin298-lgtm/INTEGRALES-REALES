@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Integral reales</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<!-- MATH LIBRARIES -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/all.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/algebrite/1.4.0/algebrite.bundle-for-browser.min.js"></script>
+
+<!-- MATHJAX -->
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$'], ['\\(', '\\)']]
+}
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🧮 Integrales reales
+
+</div>
+
+<div class="header-buttons">
+
+<button id="darkBtn">
+
+🌙
+
+</button>
+
+<button onclick="limpiarTodo()">
+
+🗑️
+
+</button>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<h1>
+
+Resolver Integrales Paso a Paso
+
+</h1>
+
+<p>
+
+Sistema profesional de cálculo integral
+
+</p>
+
+</section>
+
+<section class="editor-card">
+
+<div class="integral-box">
+
+<span class="integral-symbol">
+
+∫
+
+</span>
+
+<input
+type="text"
+id="integralInput"
+placeholder="Ejemplo: 3x^2 + 4x - 5"
+>
+
+<span class="dx">
+
+dx
+
+</span>
+
+</div>
+
+<select id="metodoManual">
+
+<option value="auto">
+
+🔍 Detección automática
+
+</option>
+
+<option value="directa">
+
+➕ Integración algebraica
+
+</option>
+
+<option value="partes">
+
+✋ Integración por partes
+
+</option>
+
+<option value="trig">
+
+📐 Integración trigonométrica
+
+</option>
+
+<option value="sustitucion">
+
+🔄 Sustitución
+
+</option>
+
+<option value="fracciones">
+
+🧩 Fracciones parciales
+
+</option>
+
+</select>
+
+<div class="quick-buttons">
+
+<button onclick="poner('x^2')">x²</button>
+
+<button onclick="poner('3x^2+4x-5')">Polinomio</button>
+
+<button onclick="poner('sin(x)')">sin(x)</button>
+
+<button onclick="poner('cos(x)')">cos(x)</button>
+
+<button onclick="poner('tan(x)')">tan(x)</button>
+
+<button onclick="poner('e^x')">eˣ</button>
+
+<button onclick="poner('1/x')">1/x</button>
+
+<button onclick="poner('x*e^x')">x·eˣ</button>
+
+<button onclick="poner('x*sin(x)')">x·sin(x)</button>
+
+<button onclick="poner('1/(x^2-1)')">1/(x²-1)</button>
+
+</div>
+
+<button
+class="resolver-btn"
+onclick="resolverIntegral()">
+
+▶ Resolver Integral
+
+</button>
+
+</section>
+
+<!-- RESULTADOS -->
+
+<section class="resolver-section">
+
+<div class="resultado-card">
+
+<h2>
+
+📌 Integral Ingresada
+
+</h2>
+
+<div id="integralMostrada">
+
+Esperando integral...
+
+</div>
+
+</div>
+
+<div class="resultado-card">
+
+<h2>
+
+🧠 Método Detectado
+
+</h2>
+
+<div id="metodoDetectado">
+
+Esperando método...
+
+</div>
+
+</div>
+
+<div class="resultado-card grande">
+
+<h2>
+
+📘 Explicación Pedagógica
+
+</h2>
+
+<div id="explicacionPedagogica">
+
+Aquí aparecerá la explicación...
+
+</div>
+
+</div>
+
+<div class="resultado-card grande">
+
+<h2>
+
+⚡ Procedimiento Paso a Paso
+
+</h2>
+
+<div id="procedimiento">
+
+Aquí aparecerán los pasos...
+
+</div>
+
+</div>
+
+<div class="resultado-card grande">
+
+<h2>
+
+✅ Resultado Final
+
+</h2>
+
+<div id="resultadoFinal">
+
+Esperando resultado...
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+Integral reales — Edwin de Jesus Mañon Jacobo
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
